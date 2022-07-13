@@ -27,7 +27,7 @@ export default function Otp() {
       alert("OTP is not match");
     }
   };
-
+  // genrate the otp 
   const GenOtp = () => {
     var digits = "01234567489";
     let genotp = "";
