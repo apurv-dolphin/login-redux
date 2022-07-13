@@ -1,0 +1,22 @@
+.background .shapes {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+
+.shapes:first-child {
+  background: linear-gradient(#1845ad,
+      #23a2f6);
+  left: -80px;
+  top: -193px;
+}
+
+.shapes:last-child {
+  background: linear-gradient(to right,
+      #ff512f,
+      #f09819);
+  right: -54px;
+  bottom: -196px;
+}

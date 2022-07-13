@@ -1,0 +1,22 @@
+.background .box {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+
+.box:first-child {
+  background: linear-gradient(#1845ad,
+      #23a2f6);
+  left: -80px;
+  top: -100px;
+}
+
+.box:last-child {
+  background: linear-gradient(to right,
+      #ff512f,
+      #f09819);
+  right: -69px;
+  bottom: -100px;
+}
