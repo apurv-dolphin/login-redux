@@ -5,16 +5,13 @@ import "./home.css";
 import { useNavigate } from "react-router-dom";
 import useImageExapnd from "./Imageexpamd";
 
-// import { Link } from "react-router-dom";
-
 export default function Home() {
-  const [elementRef, ToggleButton] = useImageExapnd();
+  const [elementRef, ToggleButton, liClass] = useImageExapnd();
   let navigate = useNavigate();
   const singleName = JSON.parse(localStorage.getItem("token"));
 
   useEffect(() => {
     if (singleName === null) {
-      console.log("__DP");
       navigate("/login");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -25,8 +22,8 @@ export default function Home() {
       {singleName !== null && (
         <>
           <Nevbar />
-          <Container className="moder" ref={elementRef}>
-            <h1 style={{ textAlign: "center" }}>
+          <Container className={`moder${liClass}`} ref={elementRef}>
+            <h1  className={`space${liClass}`} style={{ textAlign: "center" }}>
               Welcome to Site{" "}
               {singleName.name.charAt(0).toUpperCase() +
                 singleName.name.slice(1)}{" "}
@@ -46,7 +43,7 @@ export default function Home() {
                 alt="React Bootstrap logo"
               />
               <ul>
-                <li className="space">
+                <li className={`space${liClass}`}>
                   Try React React has been designed from the start for gradual
                   adoption, and you can use as little or as much React as you
                   need. Whether you want to get a taste of React, add some
@@ -54,17 +51,17 @@ export default function Home() {
                   React-powered app, the links in this section will help you get
                   started.
                 </li>
-                <li className="space">
+                <li className={`space${liClass}`}>
                   Online Playgrounds If you’re interested in playing around with
                   React, you can use an online code playground. Try a Hello
                   World template on CodePen, CodeSandbox, or Stackblitz.
                 </li>
-                <li className="space">
+                <li className={`space${liClass}`}>
                   If you prefer to use your own text editor, you can also
                   download this HTML file, edit it, and open it from the local
                   filesystem in your browser.
                 </li>
-                <li className="space">
+                <li className={`space${liClass}`}>
                   It does a slow runtime code transformation, so we’d only
                   recommend using this for simple demos. Add React to a Website
                   You can add React to an HTML page in one minute. You can then
@@ -73,7 +70,7 @@ export default function Home() {
                   React project, a simple HTML page with script tags might still
                   be the best option.
                 </li>
-                <li className="space">
+                <li className={`space${liClass}`}>
                   It only takes a minute to set up! As your application grows,
                   you might want to consider a more integrated setup. There are
                   several JavaScript toolchains we recommend for larger
@@ -84,7 +81,7 @@ export default function Home() {
                   Whether you prefer a more theoretical or a practical approach,
                   we hope you’ll find this section helpful.
                 </li>
-                <li className="space">
+                <li className={`space${liClass}`}>
                   If you prefer to learn by doing, start with our practical
                   tutorial. If you prefer to learn concepts step by step, start
                   with our guide to main concepts. Like any unfamiliar
@@ -105,34 +102,34 @@ export default function Home() {
                   be an expert, but it’s harder to learn both React and
                   JavaScript at the same time.
                 </li>
-                <li className="space">
+                <li className={`space${liClass}`}>
                   We recommend going through this JavaScript overview to check
                   your knowledge level. It will take you between 30 minutes and
                   an hour but you will feel more confident learning React.
                 </li>
-                <h2 className="space">
-                  <u>Road map for React js</u> :-
+                <h2 className={`space${liClass}`}>
+                  Road map for React js :-
                 </h2>
                 <ul>
-                  <li className="space">
+                  <li className={`space${liClass}`}>
                     for Reference of HTML tutorials :-
                     <a href="https://www.w3schools.com/html/default.asp">
                       https://www.w3schools.com/html/default.asp
                     </a>
                   </li>
-                  <li className="space">
+                  <li className={`space${liClass}`}>
                     for Reference of CSS tutorials :-
                     <a href="https://www.w3schools.com/css/default.asp">
                       https://www.w3schools.com/css/default.asp
                     </a>
                   </li>
-                  <li className="space">
+                  <li className={`space${liClass}`}>
                     for Reference of JavaScript tutorials :-
                     <a href="https://www.w3schools.com/js/default.asp">
                       https://www.w3schools.com/js/default.asp
                     </a>
                   </li>
-                  <li className="space">
+                  <li className={`space${liClass}`}>
                     for Reference of ReactJs tutorials :-
                     <a href="https://www.w3schools.com/react/default.asp">
                       https://www.w3schools.com/react/default.asp

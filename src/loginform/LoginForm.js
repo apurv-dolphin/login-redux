@@ -40,7 +40,6 @@ export default function LoginForm() {
         );
       });
       if (userData && userData.length !== 0) {
-        console.log("__ak");
         if (loginData.Email !== "" && loginData.Password !== "") {
           alert("Login success");
           nevigate("/dashboard");

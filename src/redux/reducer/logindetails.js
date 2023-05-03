@@ -6,7 +6,6 @@ const intialstate = {
 const loginReducer = (state = intialstate, action) => {
   switch (action.type) {
     case "LOGIN_SUCCESS":
-      console.log(action.userName.Email);
       return {
         ...state,
         authToken: action.authToken,

@@ -12,8 +12,20 @@ import Forgotpass from "./loginform/Forgotpass";
 import Home from "./Componenet/Home";
 import Contactus from "./Componenet/Contactus";
 import Otp from "./Componenet/Otp";
+import { useEffect } from "react";
+import { login } from "./redux/action/action";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    if (token) {
+      dispatch(login(token.username, token));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <BrowserRouter>

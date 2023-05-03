@@ -36,6 +36,8 @@ const useImageExapnd = () => {
     }
   };
 
+  const liClass = isFullscreen ? " fullscreen" : "";
+
   const ToggleIcon = (
     <div className="buttoons" onClick={() => handleClick()}>
       <Button
@@ -48,7 +50,7 @@ const useImageExapnd = () => {
       </Button>
     </div>
   );
-  return [elementRef, ToggleIcon]; //Icon, ref
+  return [elementRef, ToggleIcon , liClass]; //Icon, ref
 };
 
 export default useImageExapnd;
