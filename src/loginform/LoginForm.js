@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login } from "../redux/action/action";
+import { isLoggingStatus, login } from "../redux/action/action";
 import "./login.css";
+import { toast } from "react-toastify";
 
 export default function LoginForm() {
   let nevigate = useNavigate();
@@ -33,7 +34,6 @@ export default function LoginForm() {
     e.preventDefault();
 
     if (match !== null) {
-      console.log(match);
       const userData = match.filter((rd) => {
         return (
           rd.Email === loginData.Email && rd.Password === loginData.Password
@@ -41,7 +41,6 @@ export default function LoginForm() {
       });
       if (userData && userData.length !== 0) {
         if (loginData.Email !== "" && loginData.Password !== "") {
-          alert("Login success");
           nevigate("/dashboard");
           const token = {
             authtok: "dcsdhgvdsjcvd#jcgd$sjhcdshjgdsfhds@glhz",
@@ -52,18 +51,69 @@ export default function LoginForm() {
           e.target.reset();
           clear();
           dispatch(login(loginData, token));
+          dispatch(isLoggingStatus(true));
+          toast("Login Successfully.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         }
       } else {
         if (loginData.Email === "") {
-          alert("email is required");
+          toast("First-name is required.", {
+            position: "top-right",
+            type: "error",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         } else if (loginData.Password === "") {
-          alert("password is required");
+          toast("Password is required.", {
+            position: "top-right",
+            type: "error",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         } else {
-          alert("username and password is not match");
+          toast("username and password is not match.", {
+            position: "top-right",
+            type: "error",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         }
       }
     } else {
-      alert("please Registered");
+      toast("Please Register.", {
+        position: "top-right",
+        type: "error",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 

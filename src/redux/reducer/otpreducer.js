@@ -4,7 +4,6 @@ const intialotp = {
 const otpReducer = (state = intialotp, action) => {
   switch (action.type) {
     case "OTP GENRATE":
-      console.log(action.OTP);
       return {
         ...state,
         OTP: action.OTP,

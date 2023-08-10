@@ -5,29 +5,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { otpstore, otpstoredelete } from "../redux/action/action";
 import Nevbar from "./nevbar";
 import { useNavigate } from "react-router-dom";
+import alertify from "alertifyjs";
 
 export default function Otp() {
   const [otp, setOtp] = useState("");
   let navigate = useNavigate();
 
   const nums = useSelector((state) => state.otpReducer);
-  console.log(nums);
-  console.log(otp);
   const dispatch = useDispatch();
 
   const varify = () => {
     if (otp === nums.OTP && otp.length === 6) {
-      console.log("__ak match");
-      alert("Successfully Match");
+      alertify.set('notifier','position', 'top-right');
+      alertify.success("Successfully Match");
       navigate("/about/contactus");
       return dispatch(otpstoredelete());
     } else {
-      console.log("__ak notmatch");
       setOtp("");
-      alert("OTP is not match");
+      alertify.set('notifier','position', 'top-right');
+      alertify.error("OTP is not match");
     }
   };
-  // genrate the otp 
+  // genrate the otp
   const GenOtp = () => {
     var digits = "01234567489";
     let genotp = "";

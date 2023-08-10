@@ -1,21 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import Nevbar from "./nevbar";
 import "./home.css";
-import { useNavigate } from "react-router-dom";
 import useImageExapnd from "./Imageexpamd";
 
 export default function Home() {
   const [elementRef, ToggleButton, liClass] = useImageExapnd();
-  let navigate = useNavigate();
   const singleName = JSON.parse(localStorage.getItem("token"));
-
-  useEffect(() => {
-    if (singleName === null) {
-      navigate("/login");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [singleName]);
 
   return (
     <div>

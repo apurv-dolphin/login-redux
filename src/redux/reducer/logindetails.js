@@ -1,6 +1,7 @@
 const intialstate = {
   authToken: "",
   userName: "",
+  isLoggedIn: false
 };
 
 const loginReducer = (state = intialstate, action) => {
@@ -17,6 +18,11 @@ const loginReducer = (state = intialstate, action) => {
         authToken: "",
         userName: "",
       };
+     case 'IS_LOGGINUSER':
+      return {
+        ...state,
+        isLoggedIn: action.isLoggedIn
+      }
     default:
       return state;
   }

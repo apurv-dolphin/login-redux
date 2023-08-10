@@ -19,8 +19,16 @@ export const otpstore = (genotp) => {
   };
 };
 
-export const otpstoredelete = () => {
+export const otpstoredelete = (data) => {
   return {
     type: "OTP DELETE",
+    isLoggedIn: data
+  };
+};
+
+export const isLoggingStatus = (data) => {
+  return {
+    type: "IS_LOGGINUSER",
+    isLoggedIn: data
   };
 };

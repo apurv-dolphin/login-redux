@@ -13,22 +13,28 @@ import Home from "./Componenet/Home";
 import Contactus from "./Componenet/Contactus";
 import Otp from "./Componenet/Otp";
 import { useEffect } from "react";
-import { login } from "./redux/action/action";
-import { useDispatch } from "react-redux";
+import { isLoggingStatus, login } from "./redux/action/action";
+import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const isLoggedIn = useSelector((state) => state.loginReducer.isLoggedIn);
+  console.log(isLoggedIn);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     if (token) {
       dispatch(login(token.username, token));
+      dispatch(isLoggingStatus(true));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
       <BrowserRouter>
+        <ToastContainer />
         <Routes>
           <Route path="/" element={<Singup />} />
           <Route path="/login" element={<LoginForm />} />

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar, Dropdown } from "react-bootstrap";
-import { logout } from "../redux/action/action";
+import { isLoggingStatus, logout } from "../redux/action/action";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import SwitchExample from "./Toggle";
@@ -17,10 +17,10 @@ export default function Nevbar() {
 
     // eslint-disable-next-line no-restricted-globals
     let log = confirm("Are you sure?");
-    console.log(log);
     if (log) {
       navigate("/login");
       dispatch(logout());
+      dispatch(isLoggingStatus(false));
     }
   };
   return (

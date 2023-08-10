@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./signup.css";
+import { toast } from "react-toastify";
 
 export default function Singup() {
   const date = new Date();
   const time = date.getTime();
 
   const localRegisterData = JSON.parse(localStorage.getItem("registerData"));
+
+  const navigate = useNavigate();
 
   const [registerdata, setRegisterdata] = useState({
     id: time,
@@ -26,16 +29,56 @@ export default function Singup() {
 
   const validate = () => {
     if (registerdata.Firstname === "") {
-      alert("first name is required");
+      toast("First-name is required.", {
+        position: "top-right",
+        type: "error",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       return false;
     } else if (registerdata.Lastname === "") {
-      alert("Last name is required");
+      toast("Last-name is required.", {
+        position: "top-right",
+        type: "error",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       return false;
     } else if (registerdata.Email === "") {
-      alert("Email is required");
+      toast("Email is required.", {
+        position: "top-right",
+        type: "error",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       return false;
     } else if (registerdata.Password === "") {
-      alert("Password is required");
+      toast("Password is required.", {
+        position: "top-right",
+        type: "error",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       return false;
     }
     return true;
@@ -54,11 +97,20 @@ export default function Singup() {
         return em.Email === registerdata.Email;
       });
       if (matchmail.length !== 0) {
-        alert("this email is already registered");
+        toast("This email is already registered.", {
+          position: "top-right",
+          type: "error",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       } else {
         if (validate()) {
-          console.log(registerdata);
-          e.target.reset();
+          navigate("/login");
           storeData();
           setRegisterdata({
             id: time,
@@ -66,6 +118,16 @@ export default function Singup() {
             Lastname: "",
             Email: "",
             Password: "",
+          });
+          toast("Successfully Register.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
           });
         }
       }
