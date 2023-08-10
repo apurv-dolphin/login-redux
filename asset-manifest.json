@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/reduxdemo/static/css/main.e6c13ad2.css",
-    "main.js": "/reduxdemo/static/js/main.613833a6.js",
+    "main.css": "/reduxdemo/static/css/main.2e6fe7be.css",
+    "main.js": "/reduxdemo/static/js/main.65404e50.js",
     "static/js/787.a33553fe.chunk.js": "/reduxdemo/static/js/787.a33553fe.chunk.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/reduxdemo/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/reduxdemo/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/reduxdemo/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/reduxdemo/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/reduxdemo/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "index.html": "/reduxdemo/index.html",
-    "main.e6c13ad2.css.map": "/reduxdemo/static/css/main.e6c13ad2.css.map",
-    "main.613833a6.js.map": "/reduxdemo/static/js/main.613833a6.js.map",
+    "main.2e6fe7be.css.map": "/reduxdemo/static/css/main.2e6fe7be.css.map",
+    "main.65404e50.js.map": "/reduxdemo/static/js/main.65404e50.js.map",
     "787.a33553fe.chunk.js.map": "/reduxdemo/static/js/787.a33553fe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.613833a6.js"
+    "static/css/main.2e6fe7be.css",
+    "static/js/main.65404e50.js"
   ]
 }
