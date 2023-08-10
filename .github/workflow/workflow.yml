@@ -3,7 +3,7 @@ name: Auto Build and Deploy CI/CD
 on:
   push:
     branches:
-         - "main "
+         - "main"
 
 jobs:
   build:

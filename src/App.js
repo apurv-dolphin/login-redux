@@ -34,6 +34,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <h1>APurv</h1>
         <ToastContainer />
         <Routes>
           <Route path="/" element={<Singup />} />
